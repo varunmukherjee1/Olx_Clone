@@ -1,0 +1,144 @@
+.container {
+    width: 100%;
+    height: 70px;
+    background-color: var(--light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 1rem;
+}
+
+.logo {
+    width: 50px;
+}
+
+.logo img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.container select {
+    font-size: 1.3rem;
+    padding: 5px 9px;
+    outline: none;
+    border: 2px solid var(--dark-green);
+    border-radius: 4px;
+}
+
+.container select:active,
+.container select:focus,
+.search div:first-of-type input:active,
+.search div:first-of-type input:focus {
+    border-color: var(--light-green);
+}
+
+.search {
+    display: flex;
+    flex-grow: 0.8;
+    max-width: 700px;
+    /* border: 3px solid red; */
+
+}
+
+.search div:first-of-type {
+    width: 95%;
+    /* border: 3px solid yellow; */
+}
+
+.search div:first-of-type input{
+    font-size: 1.3rem;
+    padding: 5px 9px;
+    outline: none;
+    border: 2px solid var(--dark-green);
+    border-radius: 4px 0 0 4px;
+    width: 100%;
+}
+
+.search div:last-of-type{
+    background-color: var(--dark-green);
+    padding: 5px 9px;
+    border-radius: 0 4px 4px 0;
+}
+
+.login p {
+    color: #002f34;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login {
+    border-bottom: 2px solid #002f34;
+}
+
+.login:hover {
+    border-color: transparent;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    /* gap: 4px; */
+    cursor: pointer;
+}
+
+.pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card {
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px 0 rgb(0 0 0 / 12%), 0 6px 6px 0 rgb(0 0 0 / 24%);
+    width: 300px;
+    z-index: 3;
+}
+
+.intro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 2px solid grey;
+}
+
+.intro div:first-of-type {
+    width: 55px;
+    height: 55px;
+    overflow:hidden;
+    border-radius: 50%;
+}
+
+.intro div:last-of-type p {
+    color: grey;
+}
+
+.adds {
+    cursor: pointer;
+    display: flex;
+    font-size: 1.2rem;
+    gap: 1rem;
+    padding: 8px;
+    border-bottom: 2px solid grey;
+}
+
+.control {
+    cursor: pointer;
+    display: flex;
+    font-size: 1.2rem;
+    gap: 1rem;
+    padding: 8px;
+}
+
+.adds:hover,
+.control:hover {
+    background-color: rgba(67, 255, 255, 0.249);
+}

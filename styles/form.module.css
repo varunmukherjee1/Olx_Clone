@@ -1,0 +1,61 @@
+.div h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.div form {
+    padding: 5px;
+
+}
+
+.input {
+    margin-bottom: 1rem;
+}
+
+.input input {
+    font-size: 1.4rem;
+    padding: 6px 8px;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    border: 2px solid var(--dark-green);
+}
+
+.input input:focus {
+    border: 4px solid rgb(0, 128, 113);
+}
+
+.div form button {
+    width: 100%;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--dark-green);
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px 8px;
+    border: 3px solid var(--dark-green);
+    font-weight: bold;
+    transition: all 0.1s;
+}
+
+.div form button:hover {
+    background-color: white;
+    color: var(--dark-green);
+}
+
+.div p {
+    padding-left: 5px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.div p span {
+    font-style:italic;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.div p span:hover {
+    color: var(--light-green);
+}

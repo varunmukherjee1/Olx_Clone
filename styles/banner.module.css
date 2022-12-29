@@ -1,0 +1,20 @@
+.banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    gap: 1rem;
+    margin-top: 5px;
+    color: #002f34;
+    font-weight: 700;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.banner p {
+    cursor: pointer;
+}
+
+.banner p:hover {
+    color: #008780;
+}
