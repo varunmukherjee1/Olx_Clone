@@ -25,6 +25,10 @@ export default function MyAds(props) {
     setCurrTab("orders")
   }
 
+  console.log(props.sold);
+  console.log(props.unsold);
+  console.log(props.bought);
+
   useEffect(() => {
     if(router.asPath === "/myads#orders"){
       setCurrTab("orders")
@@ -49,7 +53,7 @@ export default function MyAds(props) {
             </p>
           </div>
           <div className = {classes.body}>
-            <ProductsSec products = {(currTab === "sold")? props.sold: (currTab === "unsold")? props.unsold: props.bought} view = "user"/>
+            <ProductsSec search = "*" cat = "" products = {(currTab === "sold")? props.sold: (currTab === "unsold")? props.unsold: props.bought} view = "user"/>
           </div>
         </div>
       </div>

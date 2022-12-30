@@ -12,21 +12,35 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-      // router.events.on('routeChangeStart',(url) => {
-      //   console.log("start");
-      //   setLoading(true);
-      // })
+      router.events.on('routeChangeStart',(url) => {
+        // console.log("start");
+        setLoading(true);
+      })
     
-      // router.events.on('routeChangeComplete',(url) => {
-      //   console.log("end")
-      //   setLoading(false);
-      // })
+      router.events.on('routeChangeComplete',(url) => {
+        // console.log("end")
+        setLoading(false);
+      })
 
-      // return () => {
-      //   router.events.off('routeChangeStart')
-      //   router.events.off('routeChangeComplete')
-      // }
+      return () => {
+        router.events.off('routeChangeStart',() => {
+
+        })
+        router.events.off('routeChangeComplete',() => {
+
+        })
+      }
   },[]);
+
+  // router.events.on('routeChangeStart',(url,{shallow}) => {
+  //   console.log("start");
+  //   setLoading(true);
+  // })
+
+  // router.events.on('routeChangeComplete',(url,{shallow}) => {
+  //   console.log("end")
+  //   setLoading(false);
+  // })
 
 
   return (
