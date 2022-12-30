@@ -15,8 +15,8 @@
 .logo {
     width: 50px;
     cursor: pointer;
-    position: absolute;
-    left: 30px;
+    /* position: absolute; */
+    /* left: 30px; */
 }
 
 .logo img {
@@ -31,7 +31,7 @@
     border: 2px solid var(--dark-green);
     border-radius: 4px;
     width: 10%;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
 }
 
 .srcButton {
@@ -166,6 +166,6 @@
     }
 
     .search {
-        margin-left: 5rem;
+        /* margin-left: 5rem; */
     }
 }
