@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import classes from "../styles/sellButton.module.css"
 
@@ -9,17 +10,17 @@ function SellButton() {
     const {data,status} = useSession();
     const router = useRouter();
 
-    const handler = () => {
-        if(status !== "authenticated"){
-            router.replace("/#login")
-        }
+    // const handler = () => {
+    //     if(status !== "authenticated"){
+    //         router.replace("/#login")
+    //     }
 
-        router.push("/postAdd");
-    }
+    //     router.push("/postAd");
+    // }
 
     return (
-        <div className = {classes.sell} onClick = {handler}>
-            <a  data-aut-id="btnSell">
+        <div className = {classes.sell}>
+            <Link  data-aut-id="btnSell" href = "/postAd">
                 <svg width="104" height="48" viewBox="0 0 1603 768">
                     <g>
                         <path d="M434.442 16.944h718.82c202.72 0 367.057 164.337 367.057 367.058s-164.337 367.057-367.057 367.057h-718.82c-202.721 0-367.058-164.337-367.058-367.058s164.337-367.058 367.058-367.058z"></path>
@@ -36,7 +37,7 @@ function SellButton() {
                     </span>
                     <span>Sell</span>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }

@@ -1,0 +1,35 @@
+
+.bigBox {
+    border: 2px solid rgb(190, 190, 190);
+    margin-top: 1.5rem;
+    width: 400px;
+    border-radius: 4px;
+}
+
+.bigBox h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: 6px 0;
+}
+
+.bigBox h2 span {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--light-green);
+}
+
+.box {
+    display: flex;
+    gap: 1rem;
+    padding: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-top: 2px solid rgb(190, 190, 190);
+    color: rgb(145, 145, 145);
+}
+
+.box:hover {
+    background-color: rgb(181, 181, 181);
+    color: var(--dark-green);
+}

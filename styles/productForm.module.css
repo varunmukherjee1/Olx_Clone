@@ -1,0 +1,77 @@
+.bigBox {
+    border: 2px solid rgb(190, 190, 190);
+    margin-top: 1.5rem;
+    width: 500px;
+    border-radius: 4px;
+}
+
+.bigBox>h2 {
+    text-transform: uppercase;
+    margin: 1rem 0 6px 10px;
+}
+
+.bigBox>h2 span {
+    color: var(--light-green);
+    font-style: italic;
+}
+
+.bigBox>h4 {
+    text-align: center;
+    font-style: italic;
+    cursor:pointer;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.bigBox>h4:hover {
+    text-decoration: none;
+}
+
+.box {
+    border-top: 2px solid rgb(190, 190, 190);
+    /* margin-top: 1rem; */
+    padding: 1rem;
+}
+
+.box h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.box label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.box input,
+.box textarea{
+    margin-bottom: 5px;
+    padding: 5px 9px;
+    font-size: 1.2rem;
+    width: 100%;
+    border-radius: 4px;
+    outline: none;
+}
+
+.box input:focus {
+    border: 4px solid rgb(0, 128, 107);
+}
+
+.box button {
+    outline: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--dark-green);
+    border-radius: 4px;
+    padding: 5px 9px;
+    border: 3px solid var(--dark-green);
+    cursor: pointer;
+}
+
+.box button:hover {
+    color: var(--dark-green);
+    background-color: white;
+}

@@ -5,7 +5,7 @@ import '../styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   return (
-    <SessionProvider>
+    <SessionProvider session={pageProps.session}>
       <Toaster position="top-center"/>
       <Component {...pageProps} />
     </SessionProvider>
