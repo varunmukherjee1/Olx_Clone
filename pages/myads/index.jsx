@@ -14,17 +14,6 @@ export default function MyAds(props) {
   const router = useRouter();
   const [currTab,setCurrTab] = useState("sold")
 
-  // if(status === "loading"){
-  //   return(
-  //     <h1>Loading...</h1>
-  //   )
-  // }
-
-  // if(status === "unauthenticated"){
-  //   router.replace("/#login")
-  //   return;
-  // }
-
   const setSold = () => {
     setCurrTab("sold")
   }
@@ -36,6 +25,12 @@ export default function MyAds(props) {
   const setOrder = () => {
     setCurrTab("orders")
   }
+
+  useEffect(() => {
+    if(router.asPath === "/myads#orders"){
+      setCurrTab("orders")
+    }
+  },[]);
 
   return (
     <>
