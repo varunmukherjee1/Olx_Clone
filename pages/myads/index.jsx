@@ -5,7 +5,6 @@ import { useRouter,Router } from 'next/router'
 
 import classes from "../../styles/myads.module.css"
 import Navbar from '../../components/Navbar'
-// import Banner from '../../components/Banner'
 import ProductsSec from "../../components/ProductsSec"
 
 export default function MyAds(props) {
@@ -25,9 +24,9 @@ export default function MyAds(props) {
     setCurrTab("orders")
   }
 
-  console.log(props.sold);
-  console.log(props.unsold);
-  console.log(props.bought);
+  // console.log(props.sold);
+  // console.log(props.unsold);
+  // console.log(props.bought);
 
   useEffect(() => {
     if(router.asPath === "/myads#orders"){
