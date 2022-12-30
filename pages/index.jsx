@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useSession, getSession } from "next-auth/react";
 import { MongoClient } from "mongodb";
 import { useEffect ,useState} from "react";
-import BackToTop from "react-back-to-top-button";
+// import BackToTop from "react-back-to-top-button";
 
 import Navbar from "../components/Navbar"
 import Banner from "../components/Banner"
@@ -42,7 +42,7 @@ function Home(props) {
       <Banner setCat = {setCat}/>
       <Hero/>
       <ProductsSec cat = {cat} search = {sVal} products = {props.products} view = "all"/>
-      <BackToTop
+      {/* <BackToTop
         showOnScrollDown
         showAt={100}
         speed={1500}
@@ -56,7 +56,7 @@ function Home(props) {
         }}
       >
         Back to Top
-      </BackToTop>
+      </BackToTop> */}
 
       {(router.asPath === "/#login") && <Login/>}
       {(router.asPath === "/#register") && <Register/>}
