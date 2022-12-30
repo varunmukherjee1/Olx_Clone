@@ -43,21 +43,6 @@ function Home(props) {
       <Banner setCat = {setCat}/>
       <Hero/>
       <ProductsSec cat = {cat} search = {sVal} products = {props.products} view = "all"/>
-      {/* <BackToTop
-        showOnScrollDown
-        showAt={100}
-        speed={1500}
-        easing="easeInOutQuint"
-        style = {{
-          fontSize: "1.2rem",
-          boxShadow: "0 0 6px rgba(0,0,0,0.5)",
-          padding: "7px 14px",
-          borderRadius: "24px",
-          
-        }}
-      >
-        Back to Top
-      </BackToTop> */}
 
       {(router.asPath === "/#login") && <Login/>}
       {(router.asPath === "/#register") && <Register/>}
