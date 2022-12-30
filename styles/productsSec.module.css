@@ -1,8 +1,29 @@
 .div {
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    width: 95%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3rem;
+}
+
+.div>h1 {
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    gap: 10px;
 }
 
 .ul li {
     height: 266px;
     width: 304px;
+    min-width: 260px;
+    list-style: none;
 }

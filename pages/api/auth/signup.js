@@ -31,7 +31,8 @@ const handler = async (req,res) => {
             const response = await db.collection("users").insertOne({
                 email:email,
                 password: hashPass,
-                products: []
+                products: [],
+                bought: []
             })
 
             console.log(response);

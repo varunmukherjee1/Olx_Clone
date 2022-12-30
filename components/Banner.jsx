@@ -5,12 +5,17 @@ import classes from "../styles/banner.module.css"
 function Banner() {
   return (
     <div className = {classes.banner}>
-        <p>Smartphones</p>
-        <p>Laptops</p>
-        <p>Fragrances</p>
-        <p>Skincare</p>
-        <p>groceries</p>
-        <p>Home-Decoraiton</p>
+        <p>Cars</p>
+        <p>properties</p>
+        <p>mobiles</p>
+        <p>jobs</p>
+        <p>bikes</p>
+        <p>electronics</p>
+        <p>furniture</p>
+        <p>fashion</p>
+        <p>hobbies</p>
+        <p>pets</p>
+        <p>services</p>
     </div>
   )
 }
