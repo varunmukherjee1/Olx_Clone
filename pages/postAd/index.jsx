@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useRouter } from 'next/router'
-import { useSession } from 'next-auth/react';
+import { useSession,getSession } from 'next-auth/react';
 
 import Category from '../../components/Category';
 import ProductForm from '../../components/ProductForm';
@@ -14,19 +14,6 @@ export default function PostAd() {
     cat: "Something"
   });
 
-  const {status} = useSession();
-  const router = useRouter();
-
-  if(status === "loading"){
-    return(
-      <h1>Loading...</h1>
-    )
-  }
-
-  if(status === "unauthenticated"){
-    router.replace("/#login")
-  }
-
   return (
     <div className = {classes.div}>
       <h1>Post your ad</h1>
@@ -34,4 +21,23 @@ export default function PostAd() {
       {state.fill && <ProductForm currCat = {state.cat} back = {setState}/>}
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if(!session){
+    return {
+      redirect: {
+        destination: '/#login',
+        permanent: false,
+      },
+    }
+  }
+
+  return {
+    props: {
+      session:session
+    }
+  }
 }
