@@ -43,3 +43,28 @@
     color: gray;
     font-size: 0.9rem;
 }
+
+.div.active {
+    position: relative;
+}
+
+.status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 4px 10px 4px 10px;
+    border-bottom-left-radius: 5px;
+    font-weight: bold;
+    margin-top: -1px;
+}
+
+.status.sold {
+    background-color: yellow;
+    /* background-color: palegreen; */
+    color: var(--dark-green);
+}
+
+.status.unsold {
+    background-color: palegreen;
+    color: var(--dark-green);
+}

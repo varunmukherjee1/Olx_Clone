@@ -1,0 +1,32 @@
+.div {
+    width: 100%;
+    margin-top: 1.3rem;
+}
+
+.tabs {
+    /* border: 2px solid red; */
+    width: 95%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.head {
+    display: flex;
+    gap: 1rem;
+    padding: 9px;
+}
+
+.head p {
+    border-bottom: 3px solid transparent;
+    padding: 0 3px 3px 2px;
+    cursor: pointer
+}
+
+p.active {
+    font-weight: bold;
+    border-color: var(--dark-green);
+}
+
+.head p:hover {
+    border-color: var(--dark-green);
+}

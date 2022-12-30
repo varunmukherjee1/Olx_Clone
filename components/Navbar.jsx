@@ -38,7 +38,7 @@ function Navbar(props) {
     }
 
     const adHandler = () => {
-        router.push("/myads/#sold")
+        router.push("/myads")
     }
 
     const orderHandler = () => {

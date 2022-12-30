@@ -6,7 +6,7 @@ import classes from "../styles/productsSec.module.css"
 function ProductsSec(props) {
   return (
     <div className = {classes.div}>
-        <h1>Fresh recommendations</h1>
+        {props.view === "all" && <h1>Fresh recommendations</h1>}
         <ul className = {classes.ul}>
             {
                 props.products.map((p,id) => {
@@ -16,6 +16,9 @@ function ProductsSec(props) {
                         </li>
                     )
                 })
+            }
+            {
+                (props.products.length === 0) && <h1>No Products 😶</h1>
             }
         </ul>
     </div>
