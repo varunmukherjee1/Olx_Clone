@@ -5,7 +5,7 @@ import { useRouter,Router } from 'next/router'
 
 import classes from "../../styles/myads.module.css"
 import Navbar from '../../components/Navbar'
-import Banner from '../../components/Banner'
+// import Banner from '../../components/Banner'
 import ProductsSec from "../../components/ProductsSec"
 
 export default function MyAds(props) {
@@ -38,7 +38,6 @@ export default function MyAds(props) {
   return (
     <>
       <Navbar/>
-      <Banner/>
       <div className = {classes.div}>
         <div className = {classes.tabs}>
           <div className = {classes.head}>
