@@ -1,12 +1,11 @@
 import { MongoClient,ObjectId } from "mongodb";
-import ProductsSec from "../../../components/ProductsSec";
 
 const getDetails = async (req,res) => {
 
     if(req.method === "POST"){
         try {
 
-            const client = await MongoClient.connect("mongodb://localhost:27017/olx");
+            const client = await MongoClient.connect(`${process.env.MONGO_URL}`);
             const db = client.db();
             const products = db.collection("products")
 

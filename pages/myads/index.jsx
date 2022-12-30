@@ -10,7 +10,6 @@ import ProductsSec from "../../components/ProductsSec"
 
 export default function MyAds(props) {
 
-  const {data,status} = useSession();
   const router = useRouter();
   const [currTab,setCurrTab] = useState("sold")
 
@@ -74,7 +73,7 @@ export async function getServerSideProps(context) {
     }
   }
 
-  const client = await MongoClient.connect("mongodb://localhost:27017/olx");
+  const client = await MongoClient.connect(`${process.env.MONGO_URL}`);
   const db = client.db();
   const users = db.collection("users")
   const products = db.collection("products")

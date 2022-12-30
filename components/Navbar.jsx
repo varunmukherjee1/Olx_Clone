@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useRef,useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
@@ -15,6 +15,7 @@ function Navbar(props) {
 
     const router = useRouter();
     const {data,status} = useSession();
+    const ref = useRef();
 
     const [showCard,setShowCard] = useState(false);
 
@@ -45,26 +46,42 @@ function Navbar(props) {
         router.push("/myads/#orders")
     }
 
+    const searchHandler = (e) => {
+        e.preventDefault();
+        const inp = ref.current.value;
+
+        if(inp === ""){
+            router.replace("/")
+            return;
+        }
+        
+        ref.current.value = ""
+        router.replace(`/#srch-${inp}`)
+    }
+
   return (
     <>
         <div className = {classes.container}>
             <div onClick = {homeRoute} className = {classes.logo}>
                 <img src= "/images/olx_logo_grey.png" alt="logo" />
             </div>
-
+            
             <select name="location" id="location">
                 <option value="Delhi">Delhi</option>
                 <option value="Punjab">Punjab</option>
                 <option value="Odisa">Odisa</option>
             </select>
 
+            
             <div className = {classes.search}>
-                <div>
-                    <input type="text" />
-                </div>
-                <div>
-                    <Image src = {searchIcon} alt = "search" width = "25" height = "25"/>
-                </div>
+                <form onSubmit = {searchHandler}>
+                    <div>
+                        <input ref = {ref} type="text" placeholder='Search' />
+                    </div>
+                    <div className= {classes.srcButton} onClick = {searchHandler}>
+                        <Image src = {searchIcon} alt = "search" width = "25" height = "25"/>
+                    </div>
+                </form>
             </div>
 
             { (status !== "authenticated") &&

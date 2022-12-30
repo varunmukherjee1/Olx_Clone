@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 const products = async (req,res) => {
     if(req.method === "POST"){
         try {
-            const client = await MongoClient.connect("mongodb://localhost:27017/olx");
+            const client = await MongoClient.connect(`${process.env.MONGO_URL}`);
             const db = client.db();
             const users = db.collection("users");
             const products = db.collection("products")

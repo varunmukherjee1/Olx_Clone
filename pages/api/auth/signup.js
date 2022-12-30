@@ -9,7 +9,7 @@ const handler = async (req,res) => {
 
             const {email,password} = req.body;
 
-            const client = await MongoClient.connect("mongodb://localhost:27017/olx");
+            const client = await MongoClient.connect(`${process.env.MONGO_URL}`);
             const db = client.db();
 
             const existing = await db

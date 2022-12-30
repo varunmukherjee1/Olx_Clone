@@ -6,11 +6,13 @@
     margin-top: 3px;
 }
 
-.hero button {
+.hero a {
     position: absolute;
     left: 55%;
     top: 50%;
+    text-decoration: none;
     transform: translateY(-50%);
+    color: var(--dark-green);
 
     font-size: 1rem;
     background-color: white;
@@ -21,7 +23,7 @@
     cursor: pointer;
 }
 
-.hero button:hover {
+.hero a:hover {
     background-color: #3AB7BD;
     color: white;
 }

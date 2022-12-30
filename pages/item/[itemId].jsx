@@ -23,12 +23,6 @@ function Item(props) {
         currency: 'INR',
     });
 
-    // console.log(p);
-
-    // const buyHandler = async () => {
-    //     console.log("HI....");
-    // }
-
     const buyHandler = async () => {
 
         try {
@@ -107,7 +101,7 @@ export async function getServerSideProps(context){
     const session = await getSession(context);
     
     const objId = context.params.itemId;
-    const client = await MongoClient.connect("mongodb://localhost:27017/olx");
+    const client = await MongoClient.connect(`${process.env.MONGO_URL}`);
     const products = client.db().collection("products")
 
     const reqProd = await products.findOne({_id: ObjectId(objId)})

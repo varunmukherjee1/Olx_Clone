@@ -15,7 +15,7 @@ export default NextAuth({
 
                 try {
 
-                    const client = await MongoClient.connect("mongodb://localhost:27017/olx");
+                    const client = await MongoClient.connect(`${process.env.MONGO_URL}`);
                     const users = client.db().collection("users");
 
                     const user = await users.findOne({email: credentials.email});
@@ -32,11 +32,6 @@ export default NextAuth({
                         client.close();
                         throw new Error("Incorrect Password")
                     }
-
-                    // const userId = user._id.toString();
-                    // console.log(userId);
-
-
 
                     client.close();
                     return {

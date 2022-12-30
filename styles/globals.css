@@ -17,6 +17,7 @@ body {
   padding: 0;
   font-family: Roboto,Arial,Helvetica,sans-serif;
   color: var(--dark-green);
+  overflow-x: hidden;
   /* background-color: var(--light-grey); */
 }
 

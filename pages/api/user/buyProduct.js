@@ -7,7 +7,7 @@ const buyProduct = async (req,res) => {
 
             console.log("Here")
 
-            const client = await MongoClient.connect("mongodb://localhost:27017/olx");
+            const client = await MongoClient.connect(`${process.env.MONGO_URL}`);
             const db = client.db();
             const products = db.collection("products")
             const users = db.collection("users")

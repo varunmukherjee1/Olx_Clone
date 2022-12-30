@@ -5,13 +5,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
     padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
     width: 50px;
     cursor: pointer;
+    position: absolute;
+    left: 30px;
 }
 
 .logo img {
@@ -25,6 +30,12 @@
     outline: none;
     border: 2px solid var(--dark-green);
     border-radius: 4px;
+    width: 10%;
+    margin-left: 5rem;
+}
+
+.srcButton {
+    cursor: pointer;
 }
 
 .container select:active,
@@ -40,6 +51,11 @@
     max-width: 700px;
     /* border: 3px solid red; */
 
+}
+
+.search form {
+    display: flex;
+    width: 100%;
 }
 
 .search div:first-of-type {
@@ -142,4 +158,14 @@
 .adds:hover,
 .control:hover {
     background-color: rgba(67, 255, 255, 0.249);
+}
+
+@media (max-width: 670px){
+    .container select {
+        display: none;
+    }
+
+    .search {
+        margin-left: 5rem;
+    }
 }

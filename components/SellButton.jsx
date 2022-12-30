@@ -7,17 +7,6 @@ import classes from "../styles/sellButton.module.css"
 
 function SellButton() {
 
-    const {data,status} = useSession();
-    const router = useRouter();
-
-    // const handler = () => {
-    //     if(status !== "authenticated"){
-    //         router.replace("/#login")
-    //     }
-
-    //     router.push("/postAd");
-    // }
-
     return (
         <div className = {classes.sell}>
             <Link  data-aut-id="btnSell" href = "/postAd">
