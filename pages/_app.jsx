@@ -9,7 +9,6 @@ export default function App({ Component, pageProps }) {
     <SessionProvider session={pageProps.session}>
       <Toaster position="top-center"/>
       <Component {...pageProps} />
-      <Footer/>
     </SessionProvider>
   )
 }
