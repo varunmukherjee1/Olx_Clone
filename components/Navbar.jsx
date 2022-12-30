@@ -33,10 +33,22 @@ function Navbar(props) {
         router.replace("/");
     }
 
+    const homeRoute = () => {
+        router.push("/")
+    }
+
+    const adHandler = () => {
+        router.push("/myads/#sold")
+    }
+
+    const orderHandler = () => {
+        router.push("/myads/#orders")
+    }
+
   return (
     <>
         <div className = {classes.container}>
-            <div className = {classes.logo}>
+            <div onClick = {homeRoute} className = {classes.logo}>
                 <img src= "/images/olx_logo_grey.png" alt="logo" />
             </div>
 
@@ -81,9 +93,13 @@ function Navbar(props) {
                             <h2>{name}</h2>
                         </div>
                     </div>
-                    <div className = {classes.adds}>
+                    <div onClick = {adHandler} className = {classes.adds}>
                         <i className ="fa-regular fa-id-card"></i>
                         <p>My ADS</p>
+                    </div>
+                    <div onClick = {orderHandler} className = {classes.adds}>
+                        <i className="fa-solid fa-bag-shopping"></i>
+                        <p>My Orders</p>
                     </div>
                     <div className = {classes.control} onClick = {logoutHandler}>
                         <i className ="fa-solid fa-arrow-right-from-bracket"></i>

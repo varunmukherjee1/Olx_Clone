@@ -2,6 +2,10 @@ import React from 'react'
 import { getSession , useSession} from 'next-auth/react'
 import { MongoClient, ObjectId } from 'mongodb'
 import Image from 'next/image'
+import axios from 'axios'
+import { useRouter } from 'next/router'
+import toast from "react-hot-toast"
+
 
 import Navbar from '../../components/Navbar'
 import classes from "../../styles/item.module.css"
@@ -12,11 +16,49 @@ function Item(props) {
 
     const {data,status} = useSession();
     const p = props.product;
+    const router = useRouter();
 
     let rupee = new Intl.NumberFormat('en-IN', {
         style: 'currency',
         currency: 'INR',
     });
+
+    // console.log(p);
+
+    // const buyHandler = async () => {
+    //     console.log("HI....");
+    // }
+
+    const buyHandler = async () => {
+
+        try {
+            
+            if(status !== "authenticated"){
+                router.replace("/#login")
+                return;
+            }
+
+            const response = await axios.post("/api/user/buyProduct",{
+                pid: p._id,
+                uEmail: data.user.email
+            })
+
+            console.log(response.data)
+
+
+            if(response.data.success){
+                toast.success("Product Bought")
+                router.replace("/")
+            }
+            else{
+                toast.error("Process failed")
+            }
+
+        } catch (error) {
+            console.log(error);
+            toast.error("Something Went Wrong")
+        }
+    }
 
     return (
         <>
@@ -50,7 +92,7 @@ function Item(props) {
                         <p><strong>Email:</strong> {p.sellerEmail}</p>
                     </div>
                     <div className = {classes.bigBox}>
-                        <button>Buy Now</button>
+                        <button onClick = {buyHandler}>Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -58,7 +100,7 @@ function Item(props) {
     )
 }
 
-export default Item
+export default Item;
 
 export async function getServerSideProps(context){
 
@@ -70,7 +112,7 @@ export async function getServerSideProps(context){
 
     const reqProd = await products.findOne({_id: ObjectId(objId)})
 
-    console.log(reqProd)
+    // console.log(reqProd)
 
     return ({
         props:{
