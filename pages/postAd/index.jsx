@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import { useRouter } from 'next/router'
-import { useSession,getSession } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
+import Head from 'next/head';
 
 import Category from '../../components/Category';
 import ProductForm from '../../components/ProductForm';
@@ -15,11 +15,16 @@ export default function PostAd() {
   });
 
   return (
-    <div className = {classes.div}>
-      <h1>Post your ad</h1>
-      {!state.fill && <Category currCat = {state.cat} next = {setState}/>}
-      {state.fill && <ProductForm currCat = {state.cat} back = {setState}/>}
-    </div>
+    <>
+      <Head>
+        <title>Post Your Ad</title>
+      </Head>
+      <div className = {classes.div}>
+        <h1>Post your ad</h1>
+        {!state.fill && <Category currCat = {state.cat} next = {setState}/>}
+        {state.fill && <ProductForm currCat = {state.cat} back = {setState}/>}
+      </div>
+    </>
   )
 }
 

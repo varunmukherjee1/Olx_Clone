@@ -5,6 +5,7 @@ import Image from 'next/image'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import toast from "react-hot-toast"
+import Head from 'next/head'
 
 
 import Navbar from '../../components/Navbar'
@@ -55,7 +56,10 @@ function Item(props) {
     }
 
     return (
-        <>
+        <>  
+            <Head>
+                <title>Product Details</title>
+            </Head>
             <Navbar/>
             <Strip/>
             <div className = {classes.div}>

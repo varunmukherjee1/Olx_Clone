@@ -46,7 +46,7 @@ function Home(props) {
 
       {(router.asPath === "/#login") && <Login/>}
       {(router.asPath === "/#register") && <Register/>}
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

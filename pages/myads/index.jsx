@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { MongoClient, ObjectId} from 'mongodb'
-import { useSession,getSession } from 'next-auth/react'
-import { useRouter,Router } from 'next/router'
+import { getSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import classes from "../../styles/myads.module.css"
 import Navbar from '../../components/Navbar'
@@ -24,10 +25,6 @@ export default function MyAds(props) {
     setCurrTab("orders")
   }
 
-  // console.log(props.sold);
-  // console.log(props.unsold);
-  // console.log(props.bought);
-
   useEffect(() => {
     if(router.asPath === "/myads#orders"){
       setCurrTab("orders")
@@ -36,6 +33,9 @@ export default function MyAds(props) {
 
   return (
     <>
+      <Head>
+        <title>Dashboard</title>
+      </Head>
       <Navbar/>
       <div className = {classes.div}>
         <div className = {classes.tabs}>
