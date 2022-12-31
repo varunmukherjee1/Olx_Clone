@@ -2,6 +2,7 @@ import { Toaster } from 'react-hot-toast'
 import { SessionProvider } from "next-auth/react"
 import { useRouter } from 'next/router'
 import { useState,useEffect } from 'react'
+import Footer from "../components/Footer"
 
 import Loader from '../components/Loader'
 import '../styles/globals.css'
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }) {
       <Toaster position="top-center"/>
       <Component {...pageProps} />
       {loading && <Loader/>}
+      <Footer/>
     </SessionProvider>
   )
 }

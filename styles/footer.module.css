@@ -1,21 +1,40 @@
-.footerParentDiv {
-    width: 100%;
-    margin-top: 2rem;
-    position: relative;
-    bottom: 0;
-    /* position: absolute; */
-    /* top: 100%; */
+.footer {
+    width: 100vw;
+    background-color: var(--dark-green);
+    color: white;
+    padding: 1rem;
+    margin-top: auto;
 }
 
-.footerParentDiv .footer {
+.content {
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    background: #002f34;
-    color: whitesmoke;
+    font-size: 12px;
 }
 
-.footerParentDiv .footer p {
-    margin: 0;
+.content p:last-of-type {
+    margin-right: 16px;
+}
+
+.footer_head {
+    background-color: var(--light-grey);
+    padding: 16px 32px 32px 32px;
+    color: var(--dark-green);
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.list ul {
+    list-style: none;
+}
+
+.list li {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    color: grey;
 }

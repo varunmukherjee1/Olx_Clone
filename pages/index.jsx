@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useSession, getSession } from "next-auth/react";
 import { MongoClient } from "mongodb";
 import { useEffect ,useState} from "react";
-import Footer from "../components/Footer";
+import { FooterHead } from "../components/Footer";
 // import BackToTop from "react-back-to-top-button";
 
 import Navbar from "../components/Navbar"
@@ -46,7 +46,8 @@ function Home(props) {
 
       {(router.asPath === "/#login") && <Login/>}
       {(router.asPath === "/#register") && <Register/>}
-      {/* <Footer/> */}
+      
+      <FooterHead/>
     </>
   )
 }
