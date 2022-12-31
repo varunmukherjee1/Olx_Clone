@@ -1,9 +1,12 @@
 .footer {
     width: 100vw;
+    margin-top: auto;
+}
+
+.footer_tail {
     background-color: var(--dark-green);
     color: white;
     padding: 1rem;
-    margin-top: auto;
 }
 
 .content {

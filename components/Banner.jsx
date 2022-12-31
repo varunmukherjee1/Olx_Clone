@@ -10,6 +10,7 @@ function Banner(props) {
 
   return (
     <div className = {classes.banner}>
+        <p onClick = {() => handler("")}>All Products</p>
         <p onClick = {() => handler("cars")}>Cars</p>
         <p onClick = {() => handler("properties")}>properties</p>
         <p onClick = {() => handler("mobiles")}>mobiles</p>
